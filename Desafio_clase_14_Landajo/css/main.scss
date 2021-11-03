@@ -1,0 +1,241 @@
+@import "./partials/colores.scss";
+@import "./partials/fonts.scss";
+@import "./partials/otros.scss";
+$paddingBase:15px;
+
+//Estilos para toda la pagina
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+//Estilos para las etiquetas mas generales
+body{
+    background-color: $bgcolor-body;
+    font-family: $font-body;
+    word-spacing: 1;
+}
+
+header{
+    text-align: center;
+    color: $color-header-footer;
+    background-color: $bgcolor-header;
+
+}
+
+nav{
+    background-color: $bgcolor-footer-nav;
+}
+
+form{
+    border: 2px solid;
+    margin: 15px 10px;
+    background-color: $bgcolor-secundario;
+    div{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    input, select, textarea{
+        background-color: rgba(255, 240, 223, 0.938) !important;
+        padding-left: ($paddingBase)-10;
+    }
+    .btn {
+        background-color: rgb(82, 167, 173);
+    }
+    .btn:hover{
+        background-color: $bgcolor-footer-nav;
+    }
+    
+}
+
+//Estilos generales para los titulos 
+h2{
+    font-size: $h2-size;
+}
+
+h3, h4 {
+    font-size: $h3h4-size;
+}
+
+//Estilos para las clases en todas las secciones
+.pie{
+    background-color: $bgcolor-footer-nav;
+    color: $color-header-footer;
+    padding: $paddingBase ($paddingBase)-5;
+    margin-top: 15px;
+        &__titulo{
+            font-weight: $font-bold;
+        }
+        &__contactos{
+            font-weight: $font-light;
+        }
+}
+    
+.prologo{
+    background-color: $bgcolor-secundario;
+    padding: ($paddingBase)-5;
+    border-bottom: 2px solid rgb(218, 202, 182);
+    text-align: center;
+    &__titulo{
+        
+        font-size: $h2-size;
+        font-weight: $font-bold;
+    }
+}
+
+//Estilos para las clases en distintas secciones
+
+//Estilos de la seccion index
+.indexPrincipal{    
+    background-color: $bgcolor-secundario;
+    border-bottom: 2px solid rgb(204, 178, 144);
+    padding-top: ($paddingBase)-10; 
+    &__titulo{
+        color: rgb(63, 65, 62);
+        font-size: 25px;
+    }
+}
+
+.indexSecundario{
+    &__columnas{   
+        text-align: center;  
+        &--imagen{
+            margin-top: 20px;
+            height: $columna-img-size;
+            width: $columna-img-size;
+        }  
+    }
+}
+//Estilos de la seccion galeria de fotos
+.galeria{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    &__productos{
+        font-weight: $font-bold;
+        color: white;
+    }
+}
+
+.card{
+    .card-body{
+        background-color: $bgcolor-secundario;
+    }
+    .card-footer{
+        background-color: $bgcolor-header;
+    }
+}
+
+//Estilos de la seccion sobre nosotros
+.historia{
+    padding: ($paddingBase)-5;
+    &__contenedor{
+        padding: 3rem 0rem;
+    }
+    &__titulo{
+        font-weight: $font-bold;
+        
+    }
+}
+
+//Estilos de la seccion productos
+.productos{
+    overflow: hidden;
+    .col-md-8{
+        padding-left: 0;
+        padding-right: 0;
+        border: 2px solid black;
+        div{
+            align-self: center;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        
+    }
+    &__titulo{
+       background-color: $bgcolor-secundario;
+       padding-top: 1rem;
+       padding-bottom: 1rem;
+        
+    }
+}
+
+#chistes{
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#respuesta{
+    overflow: hidden;
+    text-align: center;
+    height: 6rem;
+    border: 0.5px solid rgb(70, 52, 17) ;
+    background-color: $bgcolor-secundario;
+    color: black;
+}
+
+#productosPrintCarro{
+    margin-left: 2rem;
+    width: 650px;
+    border: 1px black solid;
+    text-align: center;
+    img{
+        height: 70%;
+        width: 70%;
+    }
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
+//Estilos para las medias queries
+@media only screen and (max-width:768px){
+    .galeria-carousel{
+        margin: $paddingBase 0;
+    }
+   
+    .productos__img
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            margin-top: $paddingBase;
+            max-height: 80% !important;
+        }         
+    }
+}
+
+@media only screen and (min-width:768px){
+    nav{
+        background-color: $bgcolor-footer-nav;
+        li{
+            max-width: 18%;
+            flex-grow: 1;
+            border: 1px solid rgb(210, 211, 223);
+        }
+    
+    }
+    nav li:hover{
+        background-color:  #243638;
+        transform: scale(105%);
+        transition: all 1s;
+    }
+    .productos{
+        .col-md{
+            border-right: $productos-border;
+        }
+    }
+}
+
+@media only screen and (max-width:576px){
+    .indexSecundario__columnas{
+        border-bottom: 2px solid rgb(112, 92, 54);       
+        p{
+       padding-top: ($paddingBase)-5;
+         }
+    }
+   .row footer{
+       margin-top: 0;
+       text-align: center;
+   }
+}
